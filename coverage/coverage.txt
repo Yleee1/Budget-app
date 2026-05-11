@@ -1,0 +1,61 @@
+TAP version 13
+# Subtest: validateEntry trims title and accepts positive amount
+ok 1 - validateEntry trims title and accepts positive amount
+  ---
+  duration_ms: 1.1051
+  ...
+# Subtest: validateEntry rejects empty title
+ok 2 - validateEntry rejects empty title
+  ---
+  duration_ms: 0.085
+  ...
+# Subtest: normalizeStoredEntry adds id when missing
+ok 3 - normalizeStoredEntry adds id when missing
+  ---
+  duration_ms: 0.1758
+  ...
+# Subtest: normalizeStoredEntry returns null on invalid type
+ok 4 - normalizeStoredEntry returns null on invalid type
+  ---
+  duration_ms: 0.0695
+  ...
+# Subtest: loadEntries returns normalized list
+ok 5 - loadEntries returns normalized list
+  ---
+  duration_ms: 0.24
+  ...
+# Subtest: loadEntries clears invalid persisted payload
+ok 6 - loadEntries clears invalid persisted payload
+  ---
+  duration_ms: 0.1281
+  ...
+# Subtest: calculateTotal sums only requested type
+ok 7 - calculateTotal sums only requested type
+  ---
+  duration_ms: 0.0968
+  ...
+# Subtest: calculateBalance subtracts outcome from income
+ok 8 - calculateBalance subtracts outcome from income
+  ---
+  duration_ms: 0.0621
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9.7746
+# start of coverage report
+# -------------------------------------------------------------------------------------
+# file                 | line % | branch % | funcs % | uncovered lines
+# -------------------------------------------------------------------------------------
+# budget-core.js       |  86.58 |    76.74 |   81.82 | 20-25 38-45 48-49 97-98 114-115
+# tests                |        |          |         | 
+#  budget-core.test.js |  98.10 |   100.00 |   86.67 | 19 25
+# -------------------------------------------------------------------------------------
+# all files            |  91.34 |    83.05 |   84.62 | 
+# -------------------------------------------------------------------------------------
+# end of coverage report

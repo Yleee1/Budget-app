@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-05-09T06:34:43.705Z",
+  "metrics": {
+    "line": 91.34,
+    "branch": 83.05,
+    "functions": 84.62
+  },
+  "threshold": {
+    "line": 80
+  },
+  "passed": true
+}

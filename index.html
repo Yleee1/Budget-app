@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Web App | javascript</title>
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="budget-container">
+      <div class="app-title">
+        <span>Budget<b>App</b></span>
+      </div>
+
+      <div class="top-actions">
+        <button type="button" class="lang-toggle" aria-label="Switch language">中文</button>
+      </div>
+
+      <div class="budget-header">
+        <div class="balance">
+          <div class="title" data-i18n="balance">Balance</div>
+          <div class="value" aria-live="polite"><small>$</small>0</div>
+        </div>
+        <div class="account">
+          <div class="income">
+            <div class="title" data-i18n="income">Income</div>
+            <div class="income-total" aria-live="polite"><small>$</small>0</div>
+          </div>
+          <div class="chart" role="img" aria-label="Income and expense chart"></div>
+          <div class="outcome">
+            <div class="title" data-i18n="outcome">Outcome</div>
+            <div class="outcome-total" aria-live="polite"><small>$</small>0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="budget-dashboard">
+        <div class="dash-title" data-i18n="dashboard">Dashboard</div>
+        <div class="toggle" role="tablist" aria-label="Entry filter">
+          <button type="button" id="tab-expense" class="first-tab" role="tab" aria-selected="false" aria-controls="expense" data-i18n="expenses">
+            Expenses
+          </button>
+          <button type="button" id="tab-income" class="second-tab" role="tab" aria-selected="false" aria-controls="income" data-i18n="income">
+            Income
+          </button>
+          <button type="button" id="tab-all" class="third-tab focus" role="tab" aria-selected="true" aria-controls="all" data-i18n="all">
+            All
+          </button>
+        </div>
+
+        <div class="hide" id="expense" role="tabpanel" aria-hidden="true" aria-labelledby="tab-expense">
+          <ul class="list"></ul>
+          <div class="input">
+            <label class="sr-only" for="expense-title-input" data-i18n="titleLabel">Expense title</label>
+            <input
+              type="text"
+              id="expense-title-input"
+              name="title"
+              placeholder="title"
+              aria-label="Expense title"
+            />
+            <label class="sr-only" for="expense-amount-input" data-i18n="amountLabel">Expense amount</label>
+            <input
+              type="number"
+              id="expense-amount-input"
+              name="amount"
+              placeholder="$0"
+              aria-label="Expense amount"
+            />
+            <button type="button" class="add-expense" aria-label="Add expense">
+              <img src="icon/plus.png" alt="" />
+            </button>
+          </div>
+        </div>
+
+        <div class="hide" id="income" role="tabpanel" aria-hidden="true" aria-labelledby="tab-income">
+          <ul class="list"></ul>
+          <div class="input">
+            <label class="sr-only" for="income-title-input" data-i18n="titleLabel">Income title</label>
+            <input
+              type="text"
+              id="income-title-input"
+              name="title"
+              placeholder="title"
+              aria-label="Income title"
+            />
+            <label class="sr-only" for="income-amount-input" data-i18n="amountLabel">Income amount</label>
+            <input
+              type="number"
+              id="income-amount-input"
+              name="amount"
+              placeholder="$0"
+              aria-label="Income amount"
+            />
+            <button type="button" class="add-income" aria-label="Add income">
+              <img src="icon/plus.png" alt="" />
+            </button>
+          </div>
+        </div>
+
+        <div id="all" role="tabpanel" aria-hidden="false" aria-labelledby="tab-all">
+          <ul class="list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cookie-banner hide" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+      <p data-i18n="cookieText">
+        We use local storage to save your entries. By continuing, you accept this use.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" id="accept-cookies" data-i18n="accept">Accept</button>
+        <button type="button" id="decline-cookies" data-i18n="decline">Decline</button>
+        <a id="privacy-link" href="./privacy.html" target="_blank" rel="noopener noreferrer" data-i18n="privacyPolicy">
+          Privacy Policy
+        </a>
+      </div>
+    </div>
+
+    <script src="./budget-core.js"></script>
+    <script src="./chart.js"></script>
+    <script src="./budget.js"></script>
+  </body>
+</html>
